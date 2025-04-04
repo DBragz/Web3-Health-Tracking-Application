@@ -58,17 +58,27 @@ export default function Home() {
   };
 
   const switchNetwork = async () => {
-    console.log("switchNetwork");
-    console.log(toHex(network));
-    console.log("switchNetwork1");
-    provider.request
+    if (!network || !provider) return;
+    
     try {
       await provider.request({
         method: "wallet_switchEthereumChain",
         params: [{ chainId: toHex(network) }]
       });
-    } catch (error) {
-      setError(error);
+    } catch (switchError) {
+      // This error code indicates that the chain has not been added to MetaMask.
+      if (switchError.code === 4902) {
+        try {
+          await provider.request({
+            method: "wallet_addEthereumChain",
+            params: [NETWORK_CONFIGS[network]]
+          });
+        } catch (addError) {
+          setError(addError);
+        }
+      } else {
+        setError(switchError);
+      }
     }
   };
 

@@ -2,8 +2,29 @@ import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 
 const APP_NAME = "Web3 Health Tracking Application";
 const APP_LOGO_URL = "https://example.com/logo.png";
-const INFURA_ID = process.env.INFURA_ID;
-const INFURA_RPC_URL = `https://base-sepolia.g.alchemy.com/v2/${INFURA_ID}`;
+const NETWORK_CONFIGS = {
+  1: {
+    chainId: "0x1",
+    chainName: "Ethereum Mainnet",
+    rpcUrls: ["https://mainnet.infura.io/v3/your-api-key"],
+    nativeCurrency: {
+      name: "Ether",
+      symbol: "ETH",
+      decimals: 18
+    }
+  },
+  11155111: {
+    chainId: "0xaa36a7",
+    chainName: "Sepolia",
+    rpcUrls: ["https://sepolia.infura.io/v3/your-api-key"],
+    nativeCurrency: {
+      name: "Sepolia Ether",
+      symbol: "ETH",
+      decimals: 18
+    }
+  }
+};
+
 const DEFAULT_CHAIN_ID = 1;
 
 // Coinbase Wallet Provider
