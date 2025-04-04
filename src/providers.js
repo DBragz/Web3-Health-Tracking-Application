@@ -1,9 +1,9 @@
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 
-const APP_NAME = "My Demo App";
+const APP_NAME = "Web3 Health Tracking Application";
 const APP_LOGO_URL = "https://example.com/logo.png";
 const INFURA_ID = process.env.INFURA_ID;
-const INFURA_RPC_URL = `https://mainnet.infura.io/v3/${INFURA_ID}`;
+const INFURA_RPC_URL = `https://base-sepolia.g.alchemy.com/v2/${INFURA_ID}`;
 const DEFAULT_CHAIN_ID = 1;
 
 // Coinbase Wallet Provider

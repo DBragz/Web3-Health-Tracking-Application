@@ -58,6 +58,10 @@ export default function Home() {
   };
 
   const switchNetwork = async () => {
+    console.log("switchNetwork");
+    console.log(toHex(network));
+    console.log("switchNetwork1");
+    provider.request
     try {
       await provider.request({
         method: "wallet_switchEthereumChain",
@@ -209,16 +213,10 @@ export default function Home() {
                 </Button>
                 <Select placeholder="Select network" onChange={handleNetwork}>
                   <option value="1" disabled={chainId === 1}>
-                    Ethereum
+                    Mainnet
                   </option>
-                  <option value="3" disabled={chainId === 3}>
-                    Ropsten
-                  </option>
-                  <option value="4" disabled={chainId === 4}>
-                    Rinkeby
-                  </option>
-                  <option value="42" disabled={chainId === 42}>
-                    Kovan
+                  <option value="2" disabled={chainId === 2}>
+                    Sepolia
                   </option>
                 </Select>
               </VStack>
