@@ -39,4 +39,4 @@ For more information on integrating using Coinbase Wallet SDK in your dapps, vis
 ## Authors
 
 - [Daniel Ribeirinha-Braga](https://github.com/DBragz)
-- [Editor](https://github.com/replit) - AI Code Assistant
+- [Repilt AI](https://replit.com/)
