@@ -223,10 +223,10 @@ export default function Home() {
                 </Button>
                 <Select placeholder="Select network" onChange={handleNetwork}>
                   <option value="1" disabled={chainId === 1}>
-                    Mainnet
+                    Base Mainnet
                   </option>
                   <option value="2" disabled={chainId === 2}>
-                    Sepolia
+                    Base Sepolia
                   </option>
                 </Select>
               </VStack>
