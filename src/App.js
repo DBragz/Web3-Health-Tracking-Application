@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import SelectWalletModal from "./Modal";
 import { toHex, truncateAddress } from "./utils";
+import { NETWORK_CONFIGS } from "./providers";
 
 export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -59,7 +60,6 @@ export default function Home() {
 
   const switchNetwork = async () => {
     if (!network || !provider) return;
-    
     try {
       await provider.request({
         method: "wallet_switchEthereumChain",
